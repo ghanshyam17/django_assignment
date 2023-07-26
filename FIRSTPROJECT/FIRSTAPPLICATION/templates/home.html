@@ -1,13 +1,52 @@
-<!-- FIRSTAPPLICATION/templates/generic.html -->
+{% load static %}
 <!DOCTYPE html>
+
 <html>
 <head>
-    <title>Home Template</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="{% static 'scripts/script.js' %}"></script>
+
 </head>
 <body>
-    <h1>Hi! Welcome to the innovation with Python training.</h1>
+    <h1 class="textToConvert" >Welcome to the Django Application</h1>
+    <hr>
+]
     <img src="{% static 'images/django_image.jpg' %}" alt="Example Image">
+    <hr>
+    <!-- Include the external script file -->
+    <h2 class="textToConvert" > Below are the 30 records with Name, ID, Contact, Address</h2>
+    <hr>
+    <br>
+    <button onclick="convertText()">Convert Text</button>
+
+    <h3 class="textToConvert">Names</h3>
+    <ul>
+        {% for name in names %}
+            <li class="textToConvert">{{ name.name }}</li>
+        {% endfor %}
+    </ul>
+
+
+    <h3 class="textToConvert">ID's</h3>
+    <ul>
+        {% for id in ids %}
+            <li class="textToConvert">{{ id.identifier }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3 class="textToConvert">Contact</h3>
+    <ul>
+        {% for contact in contacts %}
+            <li class="textToConvert">{{ contact.phone }} - {{ contact.email }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3 class="textToConvert">Address</h3>
+    <ul>
+        {% for address in addresses %}
+            <li class="textToConvert">{{ address.street }}, {{ address.city }}, {{ address.state }}, {{ address.country }}</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
-
