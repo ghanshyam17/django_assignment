@@ -9,44 +9,58 @@
 
 </head>
 <body>
-    <h1 class="textToConvert" >Welcome to the Django Application</h1>
-    <hr>
-]
-    <img src="{% static 'images/django_image.jpg' %}" alt="Example Image">
-    <hr>
-    <!-- Include the external script file -->
-    <h2 class="textToConvert" > Below are the 30 records with Name, ID, Contact, Address</h2>
-    <hr>
-    <br>
-    <button onclick="convertText()">Convert Text</button>
 
-    <h3 class="textToConvert">Names</h3>
-    <ul>
-        {% for name in names %}
+<h1 class="textToConvert">Welcome to the Django Application</h1>
+<hr>
+
+<img src="{% static 'images/django_image.jpg' %}" alt="Example Image">
+<hr>
+<h2 class="textToConvert"> Below are the 30 records with Name, ID, Contact, Address</h2>
+<hr>
+<br>
+<button onclick="convertText()">Convert Text</button>
+<div class="container">
+    <div class="box">
+        <h3 class="textToConvert">Names</h3>
+        <ul>
+            {% for name in names %}
             <li class="textToConvert">{{ name.name }}</li>
-        {% endfor %}
-    </ul>
+            <hr>
+            {% endfor %}
+        </ul>
+    </div>
 
-
-    <h3 class="textToConvert">ID's</h3>
-    <ul>
-        {% for id in ids %}
+    <div class="box">
+        <h3 class="textToConvert">ID's</h3>
+        <ul>
+            {% for id in ids %}
             <li class="textToConvert">{{ id.identifier }}</li>
-        {% endfor %}
-    </ul>
+            <hr>
+            {% endfor %}
+        </ul>
+    </div>
 
-    <h3 class="textToConvert">Contact</h3>
-    <ul>
-        {% for contact in contacts %}
+    <div class="box">
+        <h3 class="textToConvert">Contact</h3>
+        <ul>
+            {% for contact in contacts %}
             <li class="textToConvert">{{ contact.phone }} - {{ contact.email }}</li>
-        {% endfor %}
-    </ul>
+            <hr>
+            {% endfor %}
+        </ul>
+    </div>
 
-    <h3 class="textToConvert">Address</h3>
-    <ul>
-        {% for address in addresses %}
-            <li class="textToConvert">{{ address.street }}, {{ address.city }}, {{ address.state }}, {{ address.country }}</li>
-        {% endfor %}
-    </ul>
+    <div class="box">
+        <h3 class="textToConvert">Address</h3>
+        <ul>
+            {% for address in addresses %}
+            <li class="textToConvert">{{ address.street }}, {{ address.city }}, {{ address.state }}, {{
+                address.country }}
+            </li>
+            <hr>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
 </body>
 </html>

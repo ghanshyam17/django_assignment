@@ -3,20 +3,34 @@ body {
   font-family: verdana;
 }
 
+.container {
+    display: flex;
+    container:100%
+}
+
+.box{
+    flex :1;
+    border: 1px solid box;
+    box-sizing: border-box
+}
+
 h1 {
     text-align:center;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 img {
-    align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%
 }
-/* FIRSTAPPLICATION/static/css/style.css */
-/* Initially hide the nested <ul> inside collapsed <li> */
+
 .collapsed ul {
     display: none;
 }
 
-/* Show the nested <ul> and change font and text color when the <li> is expanded */
 .expanded ul {
     display: block;
 }
